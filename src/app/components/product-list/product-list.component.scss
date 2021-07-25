@@ -1,4 +1,5 @@
 @import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
 
 .product-list {
   padding: 7rem;
@@ -7,6 +8,7 @@
   align-content: space-evenly;
   flex-wrap: wrap;
   background-color: $background-color-1;
+  border-bottom: border-solid($border-color);
 }
 
 .product-item {

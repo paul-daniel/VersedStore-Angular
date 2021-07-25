@@ -1,0 +1,71 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+@import "../../../sass/base/typography";
+
+.cart-light {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $background-color-2;
+  padding: 2rem;
+  height: 100vh;
+  &__to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  &__btn {
+    background-color: #000;
+    color: $background-color-2;
+    width: 100%;
+    padding: 2rem;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: border-solid(transparent);
+
+    &:hover {
+      border: border-solid(#000);
+      background-color: $background-color-2;
+      color: #000;
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+}
+
+.product-cart-light {
+  display: flex;
+  padding: 5rem 0;
+  border-bottom: border-solid(#000);
+  &__title {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-bottom: 5rem;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  &__quantity {
+    font-size: 1.4rem;
+  }
+
+  &__img {
+    width: 200px;
+    height: 300px;
+    object-fit: contain;
+    margin-left: 5rem;
+  }
+}
