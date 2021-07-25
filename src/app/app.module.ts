@@ -10,6 +10,7 @@ import { CartLightComponent } from './components/cart-light/cart-light.component
 import { ProductCartLightComponent } from './components/product-cart-light/product-cart-light.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartProductComponent } from './components/cart-product/cart-product.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CartProductComponent } from './components/cart-product/cart-product.com
     ProductCartLightComponent,
     CartComponent,
     CartProductComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
