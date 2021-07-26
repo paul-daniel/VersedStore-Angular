@@ -1,14 +1,17 @@
 @import "../../../sass/abstracts/variables";
-@import "../../../sass/abstracts/mixins";
 
 .product-list {
-  padding: 7rem;
+  padding: 7rem 4rem;
   display: flex;
-  justify-content: space-between;
-  align-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   background-color: $background-color-1;
-  border-bottom: border-solid($border-color);
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 .product-item {

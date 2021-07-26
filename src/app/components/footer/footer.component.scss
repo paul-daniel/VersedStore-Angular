@@ -1,0 +1,36 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.footer {
+  border-top: border-solid(#000);
+  padding: 10rem 10rem 25rem 10rem;
+  margin: 0 8rem;
+  display: flex;
+  justify-content: space-between;
+  &__region {
+    font-size: 2rem;
+  }
+  &__lang {
+    list-style: none;
+    display: flex;
+  }
+
+  &__lang-item {
+    font-size: 2rem;
+    &:not(:first-child) {
+      padding-left: 2rem;
+    }
+    &:not(:last-child) {
+      padding-right: 2rem;
+      border-right: border-solid(#000);
+    }
+  }
+
+  &__copy {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: #d4d1d1;
+  }
+}

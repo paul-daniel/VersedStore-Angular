@@ -9,7 +9,7 @@
   border-bottom: border-solid($border-color);
 
   &__left {
-    flex: 1 0;
+    flex: 1 1;
     display: flex;
     padding: 2rem;
     justify-content: space-between;
@@ -67,7 +67,7 @@
   }
 
   &__right {
-    flex: 0 0 37.5%;
+    flex: 0 1 37.5%;
     border-left: border-solid($border-color);
     padding: 2rem;
     display: flex;
