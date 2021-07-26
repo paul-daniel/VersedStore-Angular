@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     CartPageComponent,
     FooterComponent,
+    ProductDetailPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

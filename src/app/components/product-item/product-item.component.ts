@@ -1,13 +1,27 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from 'src/app/models/Product';
 
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class ProductItemComponent implements OnInit {
-  constructor() {}
+  @Input() product: Product;
+
+  constructor() {
+    this.product = {
+      id: 1,
+      name: '',
+      shortDesc: '',
+      description: '',
+      contain: '',
+      composition: '',
+      price: 0,
+      url: '',
+      alt: '',
+    };
+  }
 
   ngOnInit(): void {}
 }
