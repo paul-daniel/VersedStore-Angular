@@ -15,7 +15,12 @@
           <span>{{ currentProduct.quantity }}</span>
           <span class="product-detail__plus" (click)="addOneQuantity()">+</span>
         </div>
-        <button class="product-detail__button btn-primary">add to bag</button>
+        <button
+          class="product-detail__button btn-primary"
+          (click)="addProductToCart()"
+        >
+          add to bag
+        </button>
       </div>
     </div>
     <div class="product-detail__image-wrapper">

@@ -6,7 +6,9 @@
   />
   <div class="product-item__detail">
     <div class="product-item__title-desc">
-      <a href="#" class="product-item__link">{{ product.name }}</a>
+      <a routerLink="/product/{{ product.id }}" class="product-item__link">{{
+        product.name
+      }}</a>
       <p class="product-item__desc">{{ product.shortDesc }}</p>
     </div>
     <p class="product-item__price">${{ product.price }}</p>

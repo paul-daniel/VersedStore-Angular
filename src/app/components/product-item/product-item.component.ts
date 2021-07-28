@@ -24,5 +24,9 @@ export class ProductItemComponent implements OnInit {
     };
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
+
   ngOnInit(): void {}
 }

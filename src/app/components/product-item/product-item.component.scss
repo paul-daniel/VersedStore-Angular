@@ -23,9 +23,10 @@
   }
 
   &__link {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: #000;
+    text-transform: capitalize;
 
     &:hover {
       color: rgb(141, 141, 141);
