@@ -44,22 +44,19 @@ export class CartComponent implements OnInit {
         url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
         alt: 'zara',
       },
-      {
-        id: 4,
-        name: 'zara perfume',
-        price: 29.99,
-        quantity: 3,
-        url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
-        alt: 'zara',
-      },
-      {
-        id: 4,
-        name: 'zara perfume',
-        price: 29.99,
-        quantity: 3,
-        url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
-        alt: 'zara',
-      },
     ];
+  }
+
+  calcTotal(): string {
+    const fullPrice = this.cartProducts.reduce((total, { price, quantity }) => {
+      return total + price * quantity;
+    }, 0);
+    return fullPrice.toFixed(2);
+  }
+
+  removeProduct(id: number): void {
+    this.cartProducts = this.cartProducts.filter(
+      (product) => product.id !== id
+    );
   }
 }

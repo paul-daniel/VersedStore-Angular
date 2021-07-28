@@ -8,6 +8,7 @@ export class Product {
   price: number;
   url: string;
   alt: string;
+  quantity: number;
 
   constructor() {
     this.id = 1;
@@ -19,5 +20,6 @@ export class Product {
     this.price = 0;
     this.url = '';
     this.alt = '';
+    this.quantity = 1;
   }
 }

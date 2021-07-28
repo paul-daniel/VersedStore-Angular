@@ -62,4 +62,11 @@ export class CartLightComponent implements OnInit {
       },
     ];
   }
+
+  calcTotal(): string {
+    const fullPrice = this.products.reduce((total, { price, quantity }) => {
+      return total + price * quantity;
+    }, 0);
+    return fullPrice.toFixed(2);
+  }
 }

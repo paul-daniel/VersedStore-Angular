@@ -9,9 +9,9 @@
     <p class="cart-product__price">{{ cartProduct.price }} $</p>
     <p class="cart-product__quantity">x{{ cartProduct.quantity }}</p>
     <div class="cart-product__add-rm">
-      <span class="cart-product__rm">-</span>
-      <span>1</span>
-      <span class="cart-product__add">+</span>
+      <span class="cart-product__rm" (click)="removeOneQty()">-</span>
+      <span>{{ cartProduct.quantity }}</span>
+      <span class="cart-product__add" (click)="addOneQty()">+</span>
     </div>
   </div>
 </div>

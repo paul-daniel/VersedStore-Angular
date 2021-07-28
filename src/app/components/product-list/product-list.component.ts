@@ -24,6 +24,7 @@ export class ProductListComponent implements OnInit {
         price: 29.99,
         url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
         alt: 'zara',
+        quantity: 1,
       },
       {
         id: 2,
@@ -36,6 +37,7 @@ export class ProductListComponent implements OnInit {
         price: 29.99,
         url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
         alt: 'zara',
+        quantity: 1,
       },
       {
         id: 3,
@@ -48,6 +50,7 @@ export class ProductListComponent implements OnInit {
         price: 29.99,
         url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
         alt: 'zara',
+        quantity: 1,
       },
       {
         id: 3,
@@ -60,6 +63,7 @@ export class ProductListComponent implements OnInit {
         price: 29.99,
         url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
         alt: 'zara',
+        quantity: 1,
       },
       {
         id: 3,
@@ -72,6 +76,7 @@ export class ProductListComponent implements OnInit {
         price: 29.99,
         url: 'https://static.zara.net/photos///2021/V/2/1/p/0120/056/999/2/w/444/0120056999_6_1_1.jpg?ts=1610619852871',
         alt: 'zara',
+        quantity: 1,
       },
     ];
   }
