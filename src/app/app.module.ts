@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -15,6 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +36,21 @@ import { ProductDetailPageComponent } from './pages/product-detail-page/product-
     CartPageComponent,
     FooterComponent,
     ProductDetailPageComponent,
+    SliderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CarouselModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule,
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true,
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

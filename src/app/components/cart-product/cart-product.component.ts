@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CartProduct } from 'src/app/models/CartProduct';
+import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/Product';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart-product',
@@ -10,7 +11,8 @@ import { Product } from 'src/app/models/Product';
 export class CartProductComponent implements OnInit {
   @Input() cartProduct: Product;
   @Output() removeProduct: EventEmitter<number> = new EventEmitter();
-  constructor() {
+  faCoffee = faCoffee;
+  constructor(private toastr: ToastrService) {
     this.cartProduct = {
       id: 1,
       name: '',
@@ -41,5 +43,9 @@ export class CartProductComponent implements OnInit {
 
   remove(id: number): void {
     this.removeProduct.emit(id);
+    this.toastr.info(
+      `${this.cartProduct.name} removed from cart 😢`,
+      'Remove Product'
+    );
   }
 }

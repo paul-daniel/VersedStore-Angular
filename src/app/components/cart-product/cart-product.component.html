@@ -8,6 +8,7 @@
     <p class="cart-product__title">{{ cartProduct.name }}</p>
     <p class="cart-product__price">{{ cartProduct.price }} $</p>
     <p class="cart-product__quantity">x{{ cartProduct.quantity }}</p>
+    <p class="cart-product__remove" (click)="remove(cartProduct.id)">remove</p>
     <div class="cart-product__add-rm">
       <span class="cart-product__rm" (click)="removeOneQty()">-</span>
       <span>{{ cartProduct.quantity }}</span>

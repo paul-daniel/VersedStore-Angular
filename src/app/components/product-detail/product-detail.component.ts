@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/Product';
 import { CartProductsService } from 'src/app/services/Products/cart-products.service';
 import { ProductsService } from 'src/app/services/Products/products.service';
@@ -11,12 +12,13 @@ import { ProductsService } from 'src/app/services/Products/products.service';
 })
 export class ProductDetailComponent implements OnInit {
   allProducts: Product[] = [];
-  currentProduct: Product;
+  @Input() currentProduct: Product;
 
   constructor(
     private activeRoute: ActivatedRoute,
     private productsService: ProductsService,
-    private cartProductService: CartProductsService
+    private cartProductService: CartProductsService,
+    private toastr: ToastrService
   ) {
     this.currentProduct = this.productsService.getAllProducts()[0];
   }
@@ -38,6 +40,11 @@ export class ProductDetailComponent implements OnInit {
 
   addProductToCart(): void {
     this.cartProductService.addProductToCart(this.currentProduct);
+    this.currentProduct.quantity = 1;
+    this.toastr.success(
+      `${this.currentProduct.name} added to basket 🤩`,
+      'Product added'
+    );
   }
 
   addOneQuantity(): void {

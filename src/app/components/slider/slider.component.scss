@@ -1,0 +1,5 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts//mixins";
+.carousel-container {
+  border-bottom: border-solid($border-color);
+}

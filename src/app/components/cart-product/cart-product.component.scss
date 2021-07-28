@@ -48,4 +48,10 @@
     font-size: 1.4rem;
     cursor: pointer;
   }
+
+  &__remove {
+    cursor: pointer;
+    text-transform: capitalize;
+    color: #c72020;
+  }
 }
