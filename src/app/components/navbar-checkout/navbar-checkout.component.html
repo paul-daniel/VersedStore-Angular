@@ -1,11 +1,25 @@
 <div class="navbar-checkout">
   <div class="navbar-checkout__steps">
-    <ul class="navbar-checkout__step-list">
+    <ul *ngIf="step === 'shipping'" class="navbar-checkout__step-list">
       <li class="navbar-checkout__step-item focused">Shipping</li>
       <li class="navbar-checkout__step-item">></li>
       <li class="navbar-checkout__step-item">Checkout</li>
       <li class="navbar-checkout__step-item">></li>
       <li class="navbar-checkout__step-item">Order Placed</li>
+    </ul>
+    <ul *ngIf="step === 'card'" class="navbar-checkout__step-list">
+      <li class="navbar-checkout__step-item">Shipping</li>
+      <li class="navbar-checkout__step-item">></li>
+      <li class="navbar-checkout__step-item focused">Checkout</li>
+      <li class="navbar-checkout__step-item">></li>
+      <li class="navbar-checkout__step-item">Order Placed</li>
+    </ul>
+    <ul *ngIf="step === 'done'" class="navbar-checkout__step-list">
+      <li class="navbar-checkout__step-item">Shipping</li>
+      <li class="navbar-checkout__step-item">></li>
+      <li class="navbar-checkout__step-item">Checkout</li>
+      <li class="navbar-checkout__step-item">></li>
+      <li class="navbar-checkout__step-item focused">Order Placed</li>
     </ul>
   </div>
 </div>

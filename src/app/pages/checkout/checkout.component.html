@@ -1,4 +1,4 @@
-<app-navbar-checkout></app-navbar-checkout>
+<app-navbar-checkout [step]="step"></app-navbar-checkout>
 <div *ngIf="step === 'shipping'"><app-shipping-form></app-shipping-form></div>
 <div *ngIf="step === 'card'"><app-checkout-form></app-checkout-form></div>
 <div *ngIf="step === 'done'"><app-resume></app-resume></div>
