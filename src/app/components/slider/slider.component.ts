@@ -37,7 +37,9 @@ export class SliderComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.products = this.productsService.getAllProducts();
+    this.productsService.getAllProducts().subscribe((res) => {
+      this.products = res;
+    });
   }
 
   toString(id: number): string {

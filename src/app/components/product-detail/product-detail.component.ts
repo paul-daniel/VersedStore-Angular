@@ -20,11 +20,25 @@ export class ProductDetailComponent implements OnInit {
     private cartProductService: CartProductsService,
     private toastr: ToastrService
   ) {
-    this.currentProduct = this.productsService.getAllProducts()[0];
+    this.currentProduct = {
+      id: 1,
+      name: '',
+      shortDesc: '',
+      description: '',
+      contain: '',
+      composition: '',
+      price: 0,
+      url: '',
+      alt: '',
+      quantity: 1,
+    };
   }
 
   ngOnInit(): void {
-    this.allProducts = this.productsService.getAllProducts();
+    this.productsService.getAllProducts().subscribe((res) => {
+      this.allProducts = res;
+      this.currentProduct = res[0];
+    });
     this.activeRoute.params.subscribe((routeParams) => {
       this.loadCurrentProduct(Number(routeParams.id));
     });

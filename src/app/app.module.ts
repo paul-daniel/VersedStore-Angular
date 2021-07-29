@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
@@ -44,6 +45,7 @@ import { SliderComponent } from './components/slider/slider.component';
     CarouselModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 2500,
       progressBar: true,
