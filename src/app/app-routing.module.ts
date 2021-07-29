@@ -6,9 +6,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'cart', component: CartPageComponent },
-  { path: 'product/:id', component: ProductDetailPageComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
+  { path: 'home', component: HomeComponent, data: { animation: 'Home' } },
+  { path: 'cart', component: CartPageComponent, data: { animation: 'Cart' } },
+  {
+    path: 'product/:id',
+    component: ProductDetailPageComponent,
+    data: { animation: 'Product' },
+  },
 ];
 
 @NgModule({
