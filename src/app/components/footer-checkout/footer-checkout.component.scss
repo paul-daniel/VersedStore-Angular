@@ -11,8 +11,15 @@
   padding: 3rem 20rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-top: border-solid($grey-color);
   background-color: $background-color-1;
+
+  &__checkout {
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: #000;
+  }
 
   &__btn {
     padding: 2rem 4rem;

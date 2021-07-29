@@ -1,3 +1,5 @@
 <app-navbar-checkout></app-navbar-checkout>
-<app-resume></app-resume>
-<app-footer-checkout></app-footer-checkout>
+<div *ngIf="step === 'shipping'"><app-shipping-form></app-shipping-form></div>
+<div *ngIf="step === 'card'"><app-checkout-form></app-checkout-form></div>
+<div *ngIf="step === 'done'"><app-resume></app-resume></div>
+<app-footer-checkout (next)="next()"></app-footer-checkout>

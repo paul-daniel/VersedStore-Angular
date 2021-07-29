@@ -8,6 +8,22 @@
   align-items: center;
   justify-content: center;
   min-height: 55vh;
+  flex-direction: column;
+  &__btn {
+    margin-top: 3rem;
+    padding: 3rem;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: transparent;
+      color: #000;
+    }
+  }
   &__wrapper {
     border: 1px solid #000;
     display: flex;

@@ -32,4 +32,10 @@ export class CartProductsService {
   getProductInCart(): Product[] {
     return this.cart;
   }
+
+  calcTotal(): number {
+    return this.cart.reduce((total, { price, quantity }) => {
+      return total + price * quantity;
+    }, 0);
+  }
 }
