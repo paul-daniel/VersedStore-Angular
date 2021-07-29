@@ -25,5 +25,6 @@ export class CartComponent implements OnInit {
     this.cartProducts = this.cartProducts.filter(
       (product) => product.id !== id
     );
+    this.cartProductService.removeProductFromCart(id);
   }
 }

@@ -34,17 +34,16 @@ export class ProductDetailComponent implements OnInit {
     const product: Product | undefined = this.allProducts.find(
       (product) => product.id === id
     );
-    console.log(product);
     if (product) this.currentProduct = product;
   }
 
   addProductToCart(): void {
     this.cartProductService.addProductToCart(this.currentProduct);
-    this.currentProduct.quantity = 1;
     this.toastr.success(
       `${this.currentProduct.name} added to basket 🤩`,
       'Product added'
     );
+    this.currentProduct = { ...this.currentProduct, quantity: 1 };
   }
 
   addOneQuantity(): void {
