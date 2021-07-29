@@ -1,0 +1,42 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts//mixins";
+@import "../../../sass/base/base";
+@import "../../../sass/base/typography";
+
+.footer-checkout {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  padding: 3rem 20rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: border-solid($grey-color);
+  background-color: $background-color-1;
+
+  &__btn {
+    padding: 2rem 4rem;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &--back {
+      color: #000;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+    &--place {
+      background-color: #000;
+      color: #fff;
+      &:hover {
+        background-color: transparent;
+        color: #000;
+      }
+    }
+  }
+}

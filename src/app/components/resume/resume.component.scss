@@ -1,0 +1,23 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts//mixins";
+@import "../../../sass/base/base";
+@import "../../../sass/base/typography";
+
+.resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+  &__wrapper {
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 4rem;
+    background-color: $background-color-1;
+    &--2 {
+      padding: 4rem 3rem;
+      background-color: #fff;
+    }
+  }
+}

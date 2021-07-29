@@ -1,0 +1,14 @@
+<div class="radio-button-group">
+  <div *ngFor="let option of optionList" class="radio-button-group__group">
+    <input
+      class="radio-button-group__input"
+      type="radio"
+      name="{{ option.name }}"
+      id="{{ option.id }}"
+    />
+    <label class="radio-button-group__label" for="personnal">
+      <span class="radio-button-group__custom-radio"></span>
+      {{ option.label }}
+    </label>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts//mixins";
+@import "../../../sass/base/base";
+@import "../../../sass/base/typography";
+
+.navbar-checkout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 20rem;
+
+  &__steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20rem;
+  }
+  &__step-list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__step-item {
+    font-size: 1.8rem;
+    color: rgb(70, 70, 70);
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.navbar__logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(50%);
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+  padding: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: filter 0.5s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover {
+    filter: brightness(1.3);
+  }
+}
+
+.focused {
+  font-weight: bolder;
+  color: #000;
+}

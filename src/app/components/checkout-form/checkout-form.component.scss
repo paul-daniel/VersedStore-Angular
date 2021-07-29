@@ -1,0 +1,65 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts//mixins";
+@import "../../../sass/base/base";
+@import "../../../sass/base/typography";
+
+.checkout-form {
+  margin: 0 20rem;
+
+  &__heading-1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    padding: 3rem 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 30rem;
+  }
+  &__form-group {
+    flex: 0 1 45%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7rem;
+    &--date {
+      flex: 0 1 5%;
+      transform: translateX(1rem);
+    }
+    &--cvv {
+      display: inline-block;
+      width: 2rem;
+    }
+  }
+
+  &__label {
+    text-transform: capitalize;
+    transform: translateY(-3rem);
+    pointer-events: none;
+    color: $grey-color;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+    opacity: 0;
+  }
+
+  &__input {
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    &:focus {
+      border-bottom: 1px solid rgb(64, 66, 184);
+    }
+  }
+
+  &__input:focus ~ &__label {
+    transform: translateY(-6rem);
+    font-size: 1.3rem;
+    color: #000;
+    opacity: 1;
+  }
+  &__input:focus::placeholder {
+    color: transparent;
+  }
+}
