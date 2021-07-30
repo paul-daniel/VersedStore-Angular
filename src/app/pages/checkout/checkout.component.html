@@ -1,5 +1,9 @@
 <app-navbar-checkout [step]="step"></app-navbar-checkout>
-<div *ngIf="step === 'shipping'"><app-shipping-form></app-shipping-form></div>
-<div *ngIf="step === 'card'"><app-checkout-form></app-checkout-form></div>
-<div *ngIf="step === 'done'"><app-resume></app-resume></div>
+<div *ngIf="step === 'shipping'" [@inOutAnimation]>
+  <app-shipping-form></app-shipping-form>
+</div>
+<div *ngIf="step === 'card'" [@inOutAnimation]>
+  <app-checkout-form></app-checkout-form>
+</div>
+<div *ngIf="step === 'done'" [@inOutAnimation]><app-resume></app-resume></div>
 <app-footer-checkout (next)="next()"></app-footer-checkout>

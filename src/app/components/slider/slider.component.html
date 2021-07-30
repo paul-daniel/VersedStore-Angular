@@ -1,7 +1,9 @@
 <owl-carousel-o class="carousel-container" [options]="customOptions">
   <ng-container *ngFor="let product of products">
     <ng-template carouselSlide [id]="toString(product.id)">
-      <app-product-detail [currentProduct]="product"></app-product-detail>
+      <app-product-detail-slide
+        [currentProduct]="product"
+      ></app-product-detail-slide>
     </ng-template>
   </ng-container>
 </owl-carousel-o>

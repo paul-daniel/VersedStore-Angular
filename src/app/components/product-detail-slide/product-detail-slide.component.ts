@@ -6,13 +6,13 @@ import { CartProductsService } from 'src/app/services/Products/cart-products.ser
 import { ProductsService } from 'src/app/services/Products/products.service';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss'],
+  selector: 'app-product-detail-slide',
+  templateUrl: './product-detail-slide.component.html',
+  styleUrls: ['./product-detail-slide.component.scss'],
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailSlideComponent implements OnInit {
   allProducts: Product[] = [];
-  currentProduct: Product;
+  @Input() currentProduct: Product;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -37,23 +37,16 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe((res) => {
       this.allProducts = res;
-      const id = Number(this.activeRoute.snapshot.params['id']);
-      const product: Product | undefined = res.find((product) => {
-        return product.id === id;
+      this.activeRoute.params.subscribe((routeParams) => {
+        this.loadCurrentProduct(Number(routeParams.id));
       });
-
-      if (product) this.currentProduct = product;
-    });
-    this.activeRoute.params.subscribe((routeParams) => {
-      this.loadCurrentProduct(Number(routeParams.id));
     });
   }
 
-  loadCurrentProduct(id: number, arr: Product[] = this.allProducts): void {
-    const product: Product | undefined = arr.find(
+  loadCurrentProduct(id: number): void {
+    const product: Product | undefined = this.allProducts.find(
       (product) => product.id === id
     );
-
     if (product) this.currentProduct = product;
   }
 

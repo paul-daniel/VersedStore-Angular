@@ -29,6 +29,7 @@ import { RadioGroupsComponent } from './components/radio-groups/radio-groups.com
 import { CheckingFinalComponent } from './components/checking-final/checking-final.component';
 import { NavbarCheckoutComponent } from './components/navbar-checkout/navbar-checkout.component';
 import { FooterCheckoutComponent } from './components/footer-checkout/footer-checkout.component';
+import { ProductDetailSlideComponent } from './components/product-detail-slide/product-detail-slide.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { FooterCheckoutComponent } from './components/footer-checkout/footer-che
     CheckingFinalComponent,
     NavbarCheckoutComponent,
     FooterCheckoutComponent,
+    ProductDetailSlideComponent,
   ],
   imports: [
     BrowserModule,
