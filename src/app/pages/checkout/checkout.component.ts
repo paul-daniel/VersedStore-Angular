@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutStepService } from 'src/app/services/checkout/checkout-step.service';
+import { CartProductsService } from 'src/app/services/Products/cart-products.service';
 import {
   trigger,
   state,
@@ -7,6 +8,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Product } from 'src/app/models/Product';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -26,13 +28,18 @@ import {
 })
 export class CheckoutComponent implements OnInit {
   step: string = '';
-  constructor(private checkoutStep: CheckoutStepService) {}
+  cart: Product[] = [];
+  constructor(
+    private checkoutStep: CheckoutStepService,
+    private cartService: CartProductsService
+  ) {}
 
   ngOnInit(): void {
     this.step = this.checkoutStep.getCurrentStep();
+    this.cart = this.cartService.getProductInCart();
   }
 
-  next(): void {
+  changeStep(): void {
     this.step = this.checkoutStep.getCurrentStep();
   }
 }

@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/Product';
 import { CartProductsService } from 'src/app/services/Products/cart-products.service';
 import { ProductsService } from 'src/app/services/Products/products.service';

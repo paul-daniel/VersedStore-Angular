@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
@@ -64,6 +65,7 @@ import { ProductDetailSlideComponent } from './components/product-detail-slide/p
     BrowserAnimationsModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
     ToastrModule.forRoot({
       timeOut: 2500,
       progressBar: true,

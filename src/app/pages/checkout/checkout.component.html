@@ -1,9 +1,21 @@
-<app-navbar-checkout [step]="step"></app-navbar-checkout>
-<div *ngIf="step === 'shipping'" [@inOutAnimation]>
-  <app-shipping-form></app-shipping-form>
+<div *ngIf="cart.length > 0">
+  <app-navbar-checkout [step]="step"></app-navbar-checkout>
+  <div *ngIf="step === 'shipping'" [@inOutAnimation]>
+    <app-shipping-form (step)="changeStep()"></app-shipping-form>
+  </div>
+  <div *ngIf="step === 'card'" [@inOutAnimation]>
+    <app-checkout-form (step)="changeStep()"></app-checkout-form>
+  </div>
+  <div *ngIf="step === 'done'" [@inOutAnimation]><app-resume></app-resume></div>
+  <app-footer-checkout></app-footer-checkout>
 </div>
-<div *ngIf="step === 'card'" [@inOutAnimation]>
-  <app-checkout-form></app-checkout-form>
+<div class="checkout-404" *ngIf="cart.length <= 0">
+  <p class="checkout-404__logo">VERSED</p>
+  <div class="checkout-404__wrapper">
+    <h1 class="checkout-404__h1">Page cannot be accessed</h1>
+    <h2 class="checkout-404__h2">
+      You must have product in cart to proceed to chekout
+    </h2>
+    <a routerLink="/" class="checkout-404__home-btn">go back to home page</a>
+  </div>
 </div>
-<div *ngIf="step === 'done'" [@inOutAnimation]><app-resume></app-resume></div>
-<app-footer-checkout (next)="next()"></app-footer-checkout>

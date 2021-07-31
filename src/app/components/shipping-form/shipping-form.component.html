@@ -2,64 +2,118 @@
   <h1 class="heading-primary shipping-form__heading-1">
     Please enter the delivery details
   </h1>
-  <div class="radio-button-group">
-    <div class="radio-button-group__group">
-      <input
-        class="radio-button-group__input"
-        type="radio"
-        name="type"
-        id="personnal"
-      />
-      <label class="radio-button-group__label" for="personnal">
-        <span class="radio-button-group__custom-radio"></span>
-        personnal
-      </label>
+
+  <form
+    action="#"
+    class="shipping-form__form"
+    (ngSubmit)="submitShippingForm()"
+  >
+    <div class="radio-button-group">
+      <div class="radio-button-group__group">
+        <input
+          class="radio-button-group__input"
+          type="radio"
+          name="type"
+          id="personnal"
+          value="personnal"
+          [(ngModel)]="typeOfAccount"
+          checked
+        />
+        <label class="radio-button-group__label" for="personnal">
+          <span class="radio-button-group__custom-radio"></span>
+          personnal
+        </label>
+      </div>
+      <div class="radio-button-group__group">
+        <input
+          class="radio-button-group__input"
+          type="radio"
+          name="type"
+          id="business"
+          value="business"
+          [(ngModel)]="typeOfAccount"
+        />
+        <label class="radio-button-group__label" for="business">
+          <span class="radio-button-group__custom-radio"></span>
+          business
+        </label>
+      </div>
     </div>
-    <div class="radio-button-group__group">
-      <input
-        class="radio-button-group__input"
-        type="radio"
-        name="type"
-        id="business"
-      />
-      <label class="radio-button-group__label" for="business">
-        <span class="radio-button-group__custom-radio"></span>
-        business
-      </label>
-    </div>
-  </div>
-  <form action="#" class="shipping-form__form">
     <div class="shipping-form__form-group">
-      <input placeholder="Name" type="text" class="shipping-form__input" />
+      <input
+        placeholder="Name"
+        type="text"
+        name="name"
+        class="shipping-form__input"
+        [(ngModel)]="name"
+      />
       <label for="" class="shipping-form__label">name</label>
     </div>
     <div class="shipping-form__form-group">
-      <input placeholder="Surname" type="text" class="shipping-form__input" />
+      <input
+        placeholder="Surname"
+        type="text"
+        name="surname"
+        class="shipping-form__input"
+        [(ngModel)]="surname"
+      />
       <label for="" class="shipping-form__label">surname</label>
     </div>
     <div class="shipping-form__form-group">
-      <input placeholder="address" type="text" class="shipping-form__input" />
+      <input
+        placeholder="address"
+        type="text"
+        name="address"
+        class="shipping-form__input"
+        [(ngModel)]="address"
+      />
       <label for="" class="shipping-form__label">address</label>
     </div>
     <div class="shipping-form__form-group">
       <input
         placeholder="Post Code / Zip"
         type="text"
+        name="postOrZip"
         class="shipping-form__input"
+        [(ngModel)]="postOrZip"
       />
       <label for="" class="shipping-form__label">post code / Zip</label>
     </div>
     <div class="shipping-form__form-group">
-      <input placeholder="Number" type="text" class="shipping-form__input" />
+      <input
+        placeholder="0000 0000 0000 0000"
+        type="text"
+        name="number"
+        class="shipping-form__input"
+        [(ngModel)]="number"
+      />
       <label for="" class="shipping-form__label">number</label>
     </div>
     <div class="shipping-form__form-group">
-      <input placeholder="Town" type="text" class="shipping-form__input" />
+      <input
+        placeholder="Town"
+        type="text"
+        name="town"
+        class="shipping-form__input"
+        [(ngModel)]="town"
+      />
       <label for="" class="shipping-form__label">town</label>
     </div>
     <div class="shipping-form__form-group">
-      <input placeholder="Country" type="text" class="shipping-form__input" />
+      <input
+        placeholder="Country"
+        type="text"
+        name="country"
+        class="shipping-form__input"
+        [(ngModel)]="country"
+      />
       <label for="" class="shipping-form__label">country</label>
     </div>
+    <div class="shipping-form__form-group"></div>
+    <input
+      class="shipping-form__form-group shipping-form__form-group--submit"
+      type="submit"
+      value="Next"
+    />
   </form>
 </div>

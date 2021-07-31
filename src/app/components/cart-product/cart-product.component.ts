@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/Product';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart-product',
@@ -11,7 +10,6 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class CartProductComponent implements OnInit {
   @Input() cartProduct: Product;
   @Output() removeProduct: EventEmitter<number> = new EventEmitter();
-  faCoffee = faCoffee;
   constructor(private toastr: ToastrService) {
     this.cartProduct = {
       id: 1,

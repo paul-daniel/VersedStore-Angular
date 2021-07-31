@@ -6,6 +6,24 @@
 .checkout-form {
   margin: 0 20rem;
 
+  &__submit {
+    display: flex;
+    flex: 0 0 20%;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid #000;
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
   &__heading-1 {
     font-size: 3rem;
     font-weight: bolder;

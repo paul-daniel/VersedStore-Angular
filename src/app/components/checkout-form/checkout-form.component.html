@@ -2,21 +2,32 @@
   <h1 class="heading-primary checkout-form__heading-1">
     Please enter your card details
   </h1>
-  <form action="#" class="checkout-form__form">
+  <form action="#" class="checkout-form__form" (ngSubmit)="handlePlaceOrder()">
     <div class="checkout-form__form-group">
       <input
         placeholder="Card Number"
         type="text"
         class="checkout-form__input"
+        [(ngModel)]="cardNumber"
       />
       <label for="" class="checkout-form__label">card number</label>
     </div>
     <div class="checkout-form__form-group checkout-form__form-group--date">
-      <input placeholder="Month" type="text" class="checkout-form__input" />
+      <input
+        placeholder="Month"
+        type="text"
+        class="checkout-form__input"
+        [(ngModel)]="month"
+      />
       <label for="" class="checkout-form__label">month</label>
     </div>
     <div class="checkout-form__form-group checkout-form__form-group--date">
-      <input placeholder="Year" type="text" class="checkout-form__input" />
+      <input
+        placeholder="Year"
+        type="text"
+        class="checkout-form__input"
+        [(ngModel)]="year"
+      />
       <label for="" class="checkout-form__label">year</label>
     </div>
     <div class="checkout-form__form-group">
@@ -24,6 +35,7 @@
         placeholder="Card Holder"
         type="text"
         class="checkout-form__input"
+        [(ngModel)]="cardHolder"
       />
       <label for="" class="checkout-form__label">card holder</label>
     </div>
@@ -32,8 +44,11 @@
         placeholder="CVV2 (security code)"
         type="text"
         class="checkout-form__input"
+        [(ngModel)]="cvv"
       />
       <label for="" class="checkout-form__label">CVV2 (security code)</label>
     </div>
+    <div class="checkout-form__form-group"></div>
+    <input class="checkout-form__submit" type="submit" value="Place order" />
   </form>
 </div>
