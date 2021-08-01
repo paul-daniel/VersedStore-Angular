@@ -2,53 +2,113 @@
   <h1 class="heading-primary checkout-form__heading-1">
     Please enter your card details
   </h1>
-  <form action="#" class="checkout-form__form" (ngSubmit)="handlePlaceOrder()">
+  <form
+    [formGroup]="checkForm"
+    #form="ngForm"
+    class="checkout-form__form"
+    (ngSubmit)="handlePlaceOrder()"
+  >
     <div class="checkout-form__form-group">
       <input
-        placeholder="Card Number"
+        formControlName="creditCard"
         type="text"
+        placeholder="Card Number"
         class="checkout-form__input"
         [(ngModel)]="cardNumber"
       />
-      <label for="" class="checkout-form__label">card number</label>
+      <label for="" class="checkout-form__label"
+        >card number
+        <span
+          *ngIf="
+            checkForm.get('creditCard')?.invalid &&
+            checkForm.get('creditCard')?.touched
+          "
+          class="text-danger"
+          >(invalid card number)</span
+        ></label
+      >
     </div>
     <div class="checkout-form__form-group checkout-form__form-group--date">
       <input
+        formControlName="month"
         placeholder="Month"
         type="text"
         class="checkout-form__input"
         [(ngModel)]="month"
       />
-      <label for="" class="checkout-form__label">month</label>
+      <label for="" class="checkout-form__label"
+        >month
+        <span
+          *ngIf="
+            checkForm.get('month')?.invalid && checkForm.get('month')?.touched
+          "
+          class="text-danger"
+          >(invalid month)</span
+        ></label
+      >
     </div>
     <div class="checkout-form__form-group checkout-form__form-group--date">
       <input
+        formControlName="year"
         placeholder="Year"
         type="text"
         class="checkout-form__input"
         [(ngModel)]="year"
       />
-      <label for="" class="checkout-form__label">year</label>
+      <label for="" class="checkout-form__label"
+        >year
+        <span
+          *ngIf="
+            checkForm.get('year')?.invalid && checkForm.get('year')?.touched
+          "
+          class="text-danger"
+          >(invalid year)</span
+        ></label
+      >
     </div>
     <div class="checkout-form__form-group">
       <input
+        formControlName="cardHolder"
         placeholder="Card Holder"
         type="text"
         class="checkout-form__input"
         [(ngModel)]="cardHolder"
       />
-      <label for="" class="checkout-form__label">card holder</label>
+      <label for="" class="checkout-form__label"
+        >card holder
+        <span
+          *ngIf="
+            checkForm.get('cardHolder')?.invalid &&
+            checkForm.get('cardHolder')?.touched
+          "
+          class="text-danger"
+          >(invalid name)</span
+        ></label
+      >
     </div>
     <div class="checkout-form__form-group checkout-form__form-group--cvv">
       <input
+        formControlName="cvv"
         placeholder="CVV2 (security code)"
         type="text"
         class="checkout-form__input"
         [(ngModel)]="cvv"
       />
-      <label for="" class="checkout-form__label">CVV2 (security code)</label>
+      <label for="" class="checkout-form__label"
+        >CVV2 (security code)
+        <span
+          *ngIf="checkForm.get('cvv')?.invalid && checkForm.get('cvv')?.touched"
+          class="text-danger"
+          >(invalid cvv)</span
+        ></label
+      >
     </div>
     <div class="checkout-form__form-group"></div>
-    <input class="checkout-form__submit" type="submit" value="Place order" />
+    <input
+      class="checkout-form__submit"
+      type="submit"
+      value="Place order"
+      [disabled]="form.invalid"
+    />
   </form>
 </div>

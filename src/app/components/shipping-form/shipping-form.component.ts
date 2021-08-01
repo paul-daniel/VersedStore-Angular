@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CheckoutStoreService } from 'src/app/services/checkout/checkout-store.service';
 import { CheckoutStepService } from 'src/app/services/checkout/checkout-step.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-shipping-form',
   templateUrl: './shipping-form.component.html',
@@ -16,6 +18,9 @@ export class ShippingFormComponent implements OnInit {
   number: number;
   town: string;
   country: string;
+  //@ts-ignore
+  shippForm: FormGroup;
+
   constructor(
     private checkStep: CheckoutStepService,
     private checkStore: CheckoutStoreService
@@ -28,6 +33,40 @@ export class ShippingFormComponent implements OnInit {
     this.number = 0;
     this.town = '';
     this.country = '';
+  }
+
+  ngOnInit(): void {
+    this.shippForm = new FormGroup({
+      name: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      surname: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      address: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+      postZip: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(5),
+      ]),
+      number: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+      town: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      country: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+    });
   }
 
   submitShippingForm(): void {
@@ -53,6 +92,4 @@ export class ShippingFormComponent implements OnInit {
     this.checkStep.nextStep();
     this.step.emit(this.checkStep.getCurrentStep());
   }
-
-  ngOnInit(): void {}
 }

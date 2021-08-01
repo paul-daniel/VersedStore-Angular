@@ -4,7 +4,8 @@
   </h1>
 
   <form
-    action="#"
+    [formGroup]="shippForm"
+    #form="ngForm"
     class="shipping-form__form"
     (ngSubmit)="submitShippingForm()"
   >
@@ -41,79 +42,154 @@
     </div>
     <div class="shipping-form__form-group">
       <input
+        formControlName="name"
         placeholder="Name"
         type="text"
         name="name"
         class="shipping-form__input"
         [(ngModel)]="name"
       />
-      <label for="" class="shipping-form__label">name</label>
+      <label for="" class="shipping-form__label"
+        >name
+        <span
+          class="text-danger"
+          *ngIf="
+            shippForm.get('name')?.invalid && shippForm.get('name')?.touched
+          "
+          >(invalid name)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group">
       <input
+        formControlName="surname"
         placeholder="Surname"
         type="text"
         name="surname"
         class="shipping-form__input"
         [(ngModel)]="surname"
       />
-      <label for="" class="shipping-form__label">surname</label>
+      <label for="" class="shipping-form__label"
+        >surname
+        <span
+          *ngIf="
+            shippForm.get('surname')?.invalid &&
+            shippForm.get('surname')?.touched
+          "
+          class="text-danger"
+          >(invalid surname)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group">
       <input
+        formControlName="address"
         placeholder="address"
         type="text"
         name="address"
         class="shipping-form__input"
         [(ngModel)]="address"
       />
-      <label for="" class="shipping-form__label">address</label>
+      <label for="" class="shipping-form__label"
+        >address
+        <span
+          *ngIf="
+            shippForm.get('address')?.invalid &&
+            shippForm.get('address')?.touched
+          "
+          class="text-danger"
+          >(invalid address)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group">
       <input
+        formControlName="postZip"
         placeholder="Post Code / Zip"
         type="text"
         name="postOrZip"
         class="shipping-form__input"
         [(ngModel)]="postOrZip"
       />
-      <label for="" class="shipping-form__label">post code / Zip</label>
+      <label for="" class="shipping-form__label"
+        >post code / Zip
+        <span
+          *ngIf="
+            shippForm.get('postZip')?.invalid &&
+            shippForm.get('postZip')?.touched
+          "
+          class="text-danger"
+          >(invalid zip or postcode)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group">
       <input
-        placeholder="0000 0000 0000 0000"
+        formControlName="number"
+        placeholder="number"
         type="text"
         name="number"
         class="shipping-form__input"
         [(ngModel)]="number"
       />
-      <label for="" class="shipping-form__label">number</label>
+      <label for="" class="shipping-form__label"
+        >phone number
+        <span
+          *ngIf="
+            shippForm.get('number')?.invalid && shippForm.get('number')?.touched
+          "
+          class="text-danger"
+          >(invalid phone number)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group">
       <input
+        formControlName="town"
         placeholder="Town"
         type="text"
         name="town"
         class="shipping-form__input"
         [(ngModel)]="town"
       />
-      <label for="" class="shipping-form__label">town</label>
+      <label for="" class="shipping-form__label"
+        >town
+        <span
+          *ngIf="
+            shippForm.get('town')?.invalid && shippForm.get('town')?.touched
+          "
+          class="text-danger"
+          >(invalid town)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group">
       <input
+        formControlName="country"
         placeholder="Country"
         type="text"
         name="country"
         class="shipping-form__input"
         [(ngModel)]="country"
       />
-      <label for="" class="shipping-form__label">country</label>
+      <label for="" class="shipping-form__label"
+        >country
+        <span
+          *ngIf="
+            shippForm.get('country')?.invalid &&
+            shippForm.get('country')?.touched
+          "
+          class="text-danger"
+          >(invalid country)</span
+        ></label
+      >
     </div>
     <div class="shipping-form__form-group"></div>
     <input
       class="shipping-form__form-group shipping-form__form-group--submit"
       type="submit"
       value="Next"
+      [disabled]="form.invalid"
     />
   </form>
 </div>

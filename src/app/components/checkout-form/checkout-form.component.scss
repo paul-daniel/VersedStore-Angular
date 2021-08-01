@@ -53,12 +53,12 @@
 
   &__label {
     text-transform: capitalize;
-    transform: translateY(-3rem);
+
     pointer-events: none;
-    color: $grey-color;
+    color: #000;
     transition: all 0.3s;
     font-size: 1.2rem;
-    opacity: 0;
+    opacity: 1;
   }
 
   &__input {
@@ -71,13 +71,17 @@
     }
   }
 
-  &__input:focus ~ &__label {
-    transform: translateY(-6rem);
-    font-size: 1.3rem;
-    color: #000;
-    opacity: 1;
-  }
+  // &__input:focus ~ &__label {
+  //   transform: translateY(-6rem);
+  //   font-size: 1.3rem;
+  //   color: #000;
+  //   opacity: 1;
+  // }
   &__input:focus::placeholder {
     color: transparent;
   }
+}
+
+.text-danger {
+  color: rgb(204, 26, 26);
 }
