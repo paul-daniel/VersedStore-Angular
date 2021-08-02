@@ -22,4 +22,8 @@ export class CheckoutStepService {
   nextStep(): void {
     this.currentStep++;
   }
+
+  reset(): void {
+    this.currentStep = 0;
+  }
 }

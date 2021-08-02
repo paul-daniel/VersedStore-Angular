@@ -38,4 +38,8 @@ export class CartProductsService {
       return total + price * quantity;
     }, 0);
   }
+
+  reset(): void {
+    this.cart = [];
+  }
 }

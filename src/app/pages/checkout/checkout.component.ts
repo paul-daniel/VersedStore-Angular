@@ -42,4 +42,9 @@ export class CheckoutComponent implements OnInit {
   changeStep(): void {
     this.step = this.checkoutStep.getCurrentStep();
   }
+
+  reset(): void {
+    this.checkoutStep.reset();
+    this.cartService.reset();
+  }
 }
