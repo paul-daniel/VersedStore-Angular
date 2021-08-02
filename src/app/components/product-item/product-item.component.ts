@@ -28,5 +28,9 @@ export class ProductItemComponent implements OnInit {
     window.location.reload();
   }
 
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+
   ngOnInit(): void {}
 }

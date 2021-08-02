@@ -16,6 +16,9 @@ export class SliderComponent implements OnInit {
     dots: true,
     navSpeed: 200,
     navText: ['<', '>'],
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1,
