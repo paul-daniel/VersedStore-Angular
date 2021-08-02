@@ -1,7 +1,12 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CheckoutStoreService } from 'src/app/services/checkout/checkout-store.service';
 import { CheckoutStepService } from 'src/app/services/checkout/checkout-step.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-shipping-form',
@@ -23,7 +28,8 @@ export class ShippingFormComponent implements OnInit {
 
   constructor(
     private checkStep: CheckoutStepService,
-    private checkStore: CheckoutStoreService
+    private checkStore: CheckoutStoreService,
+    private formBuilder: FormBuilder
   ) {
     this.typeOfAccount = 'personnal';
     this.name = '';
@@ -36,33 +42,36 @@ export class ShippingFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.shippForm = new FormGroup({
-      name: new FormControl(null, [
+    this.shippForm = this.formBuilder.group({
+      type: this.formBuilder.control(this.typeOfAccount),
+      name: this.formBuilder.control(this.name, [
         Validators.required,
         Validators.minLength(3),
       ]),
-      surname: new FormControl(null, [
+      surname: this.formBuilder.control(this.surname, [
         Validators.required,
         Validators.minLength(3),
       ]),
-      address: new FormControl(null, [
+      address: this.formBuilder.control(this.address, [
         Validators.required,
         Validators.minLength(5),
       ]),
-      postZip: new FormControl(null, [
+      postZip: this.formBuilder.control(this.postOrZip, [
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(5),
+        Validators.min(10000),
+        Validators.max(99999),
       ]),
-      number: new FormControl(null, [
+      number: this.formBuilder.control(this.number, [
         Validators.required,
         Validators.minLength(10),
       ]),
-      town: new FormControl(null, [
+      town: this.formBuilder.control(this.town, [
         Validators.required,
         Validators.minLength(3),
       ]),
-      country: new FormControl(null, [
+      country: this.formBuilder.control(this.country, [
         Validators.required,
         Validators.minLength(3),
       ]),
@@ -70,16 +79,7 @@ export class ShippingFormComponent implements OnInit {
   }
 
   submitShippingForm(): void {
-    this.checkStore.addUserDetail({
-      typeOfAccount: this.typeOfAccount,
-      name: this.name,
-      address: this.address,
-      surname: this.surname,
-      postOrZip: this.postOrZip,
-      number: this.number,
-      town: this.town,
-      country: this.country,
-    });
+    this.checkStore.addUserDetail(this.shippForm.value);
     this.typeOfAccount = 'personnal';
     this.name = '';
     this.address = '';
@@ -91,5 +91,6 @@ export class ShippingFormComponent implements OnInit {
 
     this.checkStep.nextStep();
     this.step.emit(this.checkStep.getCurrentStep());
+    console.log(this.shippForm);
   }
 }

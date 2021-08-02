@@ -13,14 +13,14 @@ export class CheckoutStoreService {
       name: '',
       address: '',
       surname: '',
-      postOrZip: '',
+      postZip: '',
       number: 0,
       town: '',
       country: '',
     };
 
     this.cardDetail = {
-      cardNumber: 0,
+      creditCard: 0,
       month: 0,
       year: 0,
       cardHolder: '',

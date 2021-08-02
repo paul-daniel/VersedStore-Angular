@@ -3,16 +3,17 @@ export class UserDetail {
   name: string;
   surname: string;
   address: string;
-  postOrZip: string;
+  postZip: string;
   number: number;
   town: string;
   country: string;
+
   constructor() {
     this.typeOfAccount = 'personnal';
     this.name = '';
     this.address = '';
     this.surname = '';
-    this.postOrZip = '';
+    this.postZip = '';
     this.number = 0;
     this.town = '';
     this.country = '';
