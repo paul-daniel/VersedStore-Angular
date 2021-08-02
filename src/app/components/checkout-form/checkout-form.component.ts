@@ -29,6 +29,7 @@ export class CheckoutFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const date = new Date();
     this.checkForm = new FormGroup({
       creditCard: new FormControl(null, [
         Validators.required,
@@ -38,8 +39,15 @@ export class CheckoutFormComponent implements OnInit {
       ]),
       month: new FormControl(null, [
         Validators.required,
-        Validators.pattern('^(0?[1-9]|1[012])$'),
-        Validators.min(new Date().getMonth() + 2),
+        Validators.pattern(''),
+        Validators.max(12),
+        Validators.min(
+          date.getFullYear() === this.year
+            ? date.getMonth() + 1 === 12
+              ? 1
+              : date.getMonth() + 2
+            : 1
+        ),
       ]),
       year: new FormControl(null, [
         Validators.required,

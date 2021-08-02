@@ -1,13 +1,18 @@
 <div *ngIf="cart.length > 0">
-  <app-navbar-checkout [step]="step"></app-navbar-checkout>
-  <div *ngIf="step === 'shipping'" [@inOutAnimation]>
+  <div *ngIf="step !== 'card' && step !== 'done'" [@inOutAnimation]>
+    <app-navbar-checkout [step]="step"></app-navbar-checkout>
     <app-shipping-form (step)="changeStep()"></app-shipping-form>
+    <app-footer-checkout></app-footer-checkout>
   </div>
   <div *ngIf="step === 'card'" [@inOutAnimation]>
+    <app-navbar-checkout [step]="step"></app-navbar-checkout>
     <app-checkout-form (step)="changeStep()"></app-checkout-form>
+    <app-footer-checkout></app-footer-checkout>
   </div>
-  <div *ngIf="step === 'done'" [@inOutAnimation]><app-resume></app-resume></div>
-  <app-footer-checkout></app-footer-checkout>
+  <div *ngIf="step === 'done'" [@inOutAnimation]>
+    <app-navbar-checkout [step]="step"></app-navbar-checkout
+    ><app-resume></app-resume>
+  </div>
 </div>
 <div class="checkout-404" *ngIf="cart.length <= 0">
   <p class="checkout-404__logo">VERSED</p>
@@ -16,8 +21,6 @@
     <h2 class="checkout-404__h2">
       You must have product in cart to proceed to chekout
     </h2>
-    <a routerLink="/" class="checkout-404__home-btn" (click)="reset()"
-      >go back to home page</a
-    >
+    <a routerLink="/" class="checkout-404__home-btn">go back to home page</a>
   </div>
 </div>

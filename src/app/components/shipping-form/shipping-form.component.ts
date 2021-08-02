@@ -56,7 +56,7 @@ export class ShippingFormComponent implements OnInit {
       ]),
       number: new FormControl(null, [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(10),
       ]),
       town: new FormControl(null, [
         Validators.required,
