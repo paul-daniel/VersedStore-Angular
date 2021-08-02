@@ -21,7 +21,7 @@
 
 ## Demo
 
-[demo-page](https://versed-store.web.app)
+[demo-page](https://versed-bef9f.web.app)
 
 ## Quick Start
 
